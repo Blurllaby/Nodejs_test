@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'duongnek'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C3794F60BF745C0B2A5E8C0D4BAC615 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_47EB2CA4FDCA44D0BAA000CAC2FE25DC }}
           package: .
