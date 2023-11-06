@@ -14,15 +14,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/login', (req, res) => {
-  res.render('login');
+    res.render('login');
 });
 app.post('/loginSubmit', (req, res) => {
     console.log('login hit');
-    console.log(req.body)
-​
+    console.log(req.body);
     let username = req.body.username;
     let password = req.body.password;
-​
     const sqlConfig = {
         user: process.env.DB_USER,
         password: process.env.DB_PWD,
@@ -38,10 +36,9 @@ app.post('/loginSubmit', (req, res) => {
             trustServerCertificate: false // change to true for local dev / self-signed certs
         }
     }
-​
     sql.connect(sqlConfig, err => {
         // ... error checks
-​
+
         // Query
         new sql.Request().query(`
             select * from Users where
@@ -58,18 +55,18 @@ app.post('/loginSubmit', (req, res) => {
                 console.log(result['recordset'])
                 if (pass == password) {
                     console.log('value present')
-                    res.render('login', {message: true});
+                    res.render('login', { message: true });
                 }
-                else{
+                else {
                     res.render('login', { message: 'Login error please check your password' });
                 }
-​
+
             }
         })
-​
+
     })
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+    console.log(`Example app listening on port ${port}`);
 });
