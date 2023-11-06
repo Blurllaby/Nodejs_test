@@ -52,7 +52,7 @@ app.post('/loginSubmit', (req, res) => {
             else {
                 console.dir(result);
                 let pass = result['recordset'][0]['PasswordID'];
-                console.log(result['recordset'])
+                console.log(result)
                 if (pass == password) {
                     console.log('value present')
                     res.render('login', { message: true });
