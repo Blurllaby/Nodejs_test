@@ -27,7 +27,7 @@ app.post('/loginSubmit', (req, res) => {
         user: process.env.DB_USER,
         password: process.env.DB_PWD,
         database: process.env.DB_NAME,
-        server: 'techlitekr.database.windows.net',
+        server: 'duongdb.database.windows.net',
         pool: {
             max: 100,
             min: 0,
